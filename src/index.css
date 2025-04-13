@@ -1,0 +1,594 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+import React, { Component } from 'react';
+ 
+// 1. (i) Without JSX
+
+const HelloWithoutJSX = () => {
+
+    return React.createElement('h1', null, 'Hello, React!');
+
+};
+ 
+// 1. (ii) With JSX
+
+const HelloWithJSX = () => {
+
+    const message = "Hello, React!";
+
+    return <h1>{message}</h1>;
+
+};
+ 
+// 2. List of Fruits
+
+const FruitList = () => {
+
+    const fruits = ['Apple', 'Banana', 'Cherry'];
+
+    return (
+<ul>
+
+            {fruits.map((fruit, index) => <li key={index}>{fruit}</li>)}
+</ul>
+
+    );
+
+};
+ 
+// 3. Styled Message
+
+const StyledMessage = () => {
+
+    return (
+<p style={{ color: 'blue', fontSize: '20px' }}>
+
+            This is a styled message!
+</p>
+
+    );
+
+};
+ 
+// 4. Sum of Squares
+
+const SumOfSquares = () => {
+
+    const a = 3;
+
+    const b = 4;
+
+    const sum = a * a + b * b;
+
+    return <p>Sum of squares: {sum}</p>;
+
+};
+ 
+// 5. Good Morning/Evening
+
+const Greeting = ({ isMorning }) => {
+
+    return <h1>{isMorning ? 'Good Morning' : 'Good Evening'}</h1>;
+
+};
+ 
+// 6. Current Day of the Week
+
+const CurrentDay = () => {
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    const currentDay = days[new Date().getDay()];
+
+    return <p>Today is: {currentDay}</p>;
+
+};
+ 
+// 7. Prime Check
+
+const PrimeCheck = ({ number }) => {
+
+    const isPrime = (num) => {
+
+        if (num <= 1) return false;
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+
+            if (num % i === 0) return false;
+
+        }
+
+        return true;
+
+    };
+
+    return <p>{number} is {isPrime(number) ? 'a prime number' : 'not a prime number'}</p>;
+
+};
+ 
+// 8. Temperature Converter
+
+class TemperatureConverter extends Component {
+
+    state = { celsius: '', fahrenheit: '' };
+ 
+    handleCelsiusChange = (e) => {
+
+        const celsius = e.target.value;
+
+        this.setState({ celsius, fahrenheit: (celsius * 9/5 + 32).toFixed(2) });
+
+    };
+ 
+    handleFahrenheitChange = (e) => {
+
+        const fahrenheit = e.target.value;
+
+        this.setState({ fahrenheit, celsius: ((fahrenheit - 32) * 5/9).toFixed(2) });
+
+    };
+ 
+    render() {
+
+        return (
+<div>
+<input type="number" value={this.state.celsius} onChange={this.handleCelsiusChange} placeholder="Celsius" />
+<input type="number" value={this.state.fahrenheit} onChange={this.handleFahrenheitChange} placeholder="Fahrenheit" />
+</div>
+
+        );
+
+    }
+
+}
+ 
+// 9. Reverse String and Palindrome Check
+
+const ReverseString = ({ str }) => {
+
+    const reversed = str.split('').reverse().join('');
+
+    const isPalindrome = str === reversed;
+
+    return (
+<p>
+
+            Reversed: {reversed} - {isPalindrome ? 'Palindrome' : 'Not a palindrome'}
+</p>
+
+    );
+
+};
+ 
+// 10. Random Number Generator
+
+class RandomNumber extends Component {
+
+    state = { number: null };
+ 
+    generateRandomNumber = () => {
+
+        this.setState({ number: Math.floor(Math.random() * 100) + 1 });
+
+    };
+ 
+    render() {
+
+        return (
+<div>
+<button onClick={this.generateRandomNumber}>Generate Random Number</button>
+
+                {this.state.number && <p>Random Number: {this.state.number}</p>}
+</div>
+
+        );
+
+    }
+
+}
+ 
+// 11. Leap Year Check
+
+const LeapYearCheck = ({ year }) => {
+
+    const isLeapYear = (year) => (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+    return <p>{year} is {isLeapYear(year) ? 'a leap year' : 'not a leap year'}</p>;
+
+};
+ 
+// 12. User Greeting
+
+class UserGreeting extends Component {
+
+    render() {
+
+        const { firstName, lastName } = this.props;
+
+        return <h1>Hello, {firstName} {lastName}!</h1>;
+
+    }
+
+}
+ 
+// Main App Component
+
+const App = () => {
+
+    return (
+<div>
+<HelloWithoutJSX />
+<HelloWithJSX />
+<FruitList />
+<StyledMessage />
+<SumOfSquares />
+<Greeting isMorning={true} />
+<CurrentDay />
+<PrimeCheck number={7} />
+<TemperatureConverter />
+<ReverseString str="React" />
+<RandomNumber />
+<LeapYearCheck year={2024} />
+<UserGreeting firstName="John" lastName="Doe" />
+</div>
+
+    );
+
+};
+ 
+export default App;
+
+*/
+ 
+/*
+
+import React, { Component } from "react";
+ 
+class LifecycleDemo extends Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = { count: 0 };
+
+    console.log("Constructor: Component is being initialized");
+
+  }
+ 
+  componentDidMount() {
+
+    console.log("componentDidMount: Component has mounted");
+
+  }
+ 
+  componentDidUpdate(prevProps, prevState) {
+
+    console.log("componentDidUpdate: Component updated");
+
+  }
+ 
+  componentWillUnmount() {
+
+    console.log("componentWillUnmount: Component is about to be unmounted");
+
+  }
+ 
+  incrementCount = () => {
+
+    this.setState({ count: this.state.count + 1 });
+
+  };
+ 
+  render() {
+
+    console.log("Render: Component is rendering");
+
+    return (
+<div>
+<h2>Lifecycle Demo</h2>
+<p>Count: {this.state.count}</p>
+<button onClick={this.incrementCount}>Increment</button>
+<button onClick={this.props.unmount}>Unmount Component</button>
+</div>
+
+    );
+
+  }
+
+}
+ 
+class App extends Component {
+
+  state = { showComponent: true };
+ 
+  toggleComponent = () => {
+
+    this.setState({ showComponent: !this.state.showComponent });
+
+  };
+ 
+  render() {
+
+    return (
+<div>
+<h1>React Lifecycle Methods</h1>
+
+        {this.state.showComponent && <LifecycleDemo unmount={this.toggleComponent} />}
+
+        {!this.state.showComponent && <p>Component Unmounted</p>}
+<button onClick={this.toggleComponent}>Toggle Component</button>
+</div>
+
+    );
+
+  }
+
+}
+ 
+export default App;
+
+*/
+ 
+/*
+
+import React, { useState } from "react";
+ 
+const FormWithState = () => {
+
+  const [formData, setFormData] = useState({ name: "", email: "" });
+ 
+  const handleChange = (e) => {
+
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  };
+ 
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    alert(`Submitted: Name - ${formData.name}, Email - ${formData.email}`);
+
+  };
+ 
+  return (
+<div>
+<h2>Form using useState</h2>
+<form onSubmit={handleSubmit}>
+<label>
+
+          Name:
+<input type="text" name="name" value={formData.name} onChange={handleChange} />
+</label>
+<br />
+<label>
+
+          Email:
+<input type="email" name="email" value={formData.email} onChange={handleChange} />
+</label>
+<br />
+<button type="submit">Submit</button>
+</form>
+<h3>Live Preview</h3>
+<p>Name: {formData.name}</p>
+<p>Email: {formData.email}</p>
+</div>
+
+  );
+
+};
+ 
+export default FormWithState;
+
+*/
+ 
+/*
+
+import React, { useRef } from "react";
+ 
+const FormWithRef = () => {
+
+  const nameRef = useRef(null);
+
+  const emailRef = useRef(null);
+ 
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    alert(`Submitted: Name - ${nameRef.current.value}, Email - ${emailRef.current.value}`);
+
+  };
+ 
+  return (
+<div>
+<h2>Form using useRef</h2>
+<form onSubmit={handleSubmit}>
+<label>
+
+          Name:
+<input type="text" name="name" ref={nameRef} />
+</label>
+<br />
+<label>
+
+          Email:
+<input type="email" name="email" ref={emailRef} />
+</label>
+<br />
+<button type="submit">Submit</button>
+</form>
+</div>
+
+  );
+
+};
+ 
+export default FormWithRef;
+
+*/
+ 
+/*
+
+import React, { useState, useRef, useEffect } from "react";
+ 
+const Stopwatch = () => {
+
+  const [time, setTime] = useState(0);
+
+  const [isRunning, setIsRunning] = useState(false);
+
+  const intervalRef = useRef(null);
+ 
+  useEffect(() => {
+
+    if (isRunning) {
+
+      intervalRef.current = setInterval(() => {
+
+        setTime((prevTime) => prevTime + 1);
+
+      }, 1000);
+
+    } else {
+
+      clearInterval(intervalRef.current);
+
+    }
+
+    return () => clearInterval(intervalRef.current);
+
+  }, [isRunning]);
+ 
+  const startStop = () => {
+
+    setIsRunning(!isRunning);
+
+  };
+ 
+  const reset = () => {
+
+    clearInterval(intervalRef.current);
+
+    setTime(0);
+
+    setIsRunning(false);
+
+  };
+ 
+  return (
+<div>
+<h2>Stopwatch</h2>
+<h1>{time} sec</h1>
+<button onClick={startStop}>{isRunning ? "Pause" : "Start"}</button>
+<button onClick={reset}>Reset</button>
+</div>
+
+  );
+
+};
+ 
+export default Stopwatch;
+
+*/
+
+/*
+import React from "react";
+import PropTypes from "prop-types";
+
+const Greeting = ({ name, age }) => {
+  return (
+    <div>
+      <h2>Hello, {name}!</h2>
+      <p>Age: {age}</p>
+    </div>
+  );
+};
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+};
+
+Greeting.defaultProps = {
+  name: "Guest",
+  age: 18,
+};
+*/
+
+/*
+export default Greeting;
+
+/*
+import React, { useState, useEffect } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 1000);
+
+    return () => clearTimeout(timeout); // Cleanup the timeout
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Counter</h2>
+      <h1>{count}</h1>
+    </div>
+  );
+};
+
+export default Counter;
+*/
